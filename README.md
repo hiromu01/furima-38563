@@ -25,7 +25,7 @@
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | name         | string     | null: false                    |
-| text         | text       | null: false                    |
+| Introduction | text       | null: false                    |
 | category_id  | integer    | null: false                    |
 | situation_id | integer    | null: false                    |
 | cost_id      | integer    | null: false                    |
@@ -59,7 +59,7 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | post_code     | string     | null: false                    |
-| prefecture_id | integer    | null: false                    |
+| area_id       | integer    | null: false                    |
 | city          | string     | null: false                    |
 | address       | string     | null: false                    |
 | building_name | string     |                                |
