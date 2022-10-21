@@ -1,24 +1,60 @@
-# README
+## テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| encrypted-password | string | null: false |
+| family_name        | string | null: false |
+| first_name         | string | null: false |
+| family_name_kana   | string | null: false |
+| first_name_kana    | string | null: false |
+| birth_day          | string | null: false |
 
-* Ruby version
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :items
+- has_many :purchases
 
-* Database creation
+## items テーブル
 
-* Database initialization
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| name       | string     | null: false                    |
+| text       | text       | null: false                    |
+| category   | text       | null: false                    |
+| situation  | text       | null: false                    |
+| cost       | text       | null: false                    |
+| area       | text       | null: false                    |
+| days       | string     | null: false                    |
+| price      | string     | null: false                    |
+| user       | references | null: false, foreign_key: true |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to :users
+- belongs_to :purchases
 
-* Deployment instructions
+## purchases テーブル
 
-* ...
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| card_number   | string     | null: false                    |
+| deadline      | string     | null: false                    |
+| code          | string     | null: false                    |
+| post_code     | string     | null: false                    |
+| prefecture    | text       | null: false                    |
+| city          | text       | null: false                    |
+| address       | text       | null: false                    |
+| building_name | text       | null: false                    |
+| phone_number  | text       | null: false                    |
+| item          | references | null: false, foreign_key: true |
+| user          | references | null: false, foreign_key: true |
+
+### Association
+
+- has_one :users
+- belongs_to :items
