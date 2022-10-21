@@ -25,7 +25,7 @@
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | name         | string     | null: false                    |
-| Introduction | text       | null: false                    |
+| introduction | text       | null: false                    |
 | category_id  | integer    | null: false                    |
 | situation_id | integer    | null: false                    |
 | cost_id      | integer    | null: false                    |
