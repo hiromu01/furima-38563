@@ -22,7 +22,7 @@
 
 ## items テーブル
 
-| Column       | Type       | Options                        |
+| Column       | Type       | Options                        | 
 | ------------ | ---------- | ------------------------------ |
 | name         | string     | null: false                    |
 | introduction | text       | null: false                    |
