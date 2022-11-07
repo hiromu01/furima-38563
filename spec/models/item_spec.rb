@@ -46,7 +46,7 @@ RSpec.describe Item, type: :model do
         @item.area_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Area must be other than 1')
-       end
+      end
       it 'send_dayが未選択だと出品できない' do
         @item.send_day_id = 1
         @item.valid?

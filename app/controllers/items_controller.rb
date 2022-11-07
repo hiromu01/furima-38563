@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :contributor_confirmation, only: [:edit, :destroy]
+  before_action :order_confirmation, only: [:edit]
 
   def index
     @items = Item.all.order(created_at: :desc)
@@ -56,5 +57,11 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-  
+
+  def order_confirmation
+    if  @item.order != nil
+      redirect_to root_path
+    end
+  end
+
 end
