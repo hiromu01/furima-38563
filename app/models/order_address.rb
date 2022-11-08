@@ -11,7 +11,7 @@ class OrderAddress
    validates :user_id
    validates :item_id
 
-   validates :area_id, numericality: { other_than: 1, messages: "can't be blank" }
+   validates :area_id, numericality: { other_than: 1, message: "を選択してください" }
   end
 
   def save
